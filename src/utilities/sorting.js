@@ -6,7 +6,6 @@ const filterByContinentname = (data, continent) => {
 };
 
 const getContinentsData = data => {
-  // const allCountries = getAllCountries(data); // Get neat data for all countries
   const allCountries = data;
   const continentsList = [];
   allCountries.forEach(country => {
@@ -22,8 +21,6 @@ const getContinentsData = data => {
   return sumOfContinents;
 };
 
-const filterByCountry = (data, countryName) => {
-  data.find(({ country }) => country === countryName);
-};
+const getCountry = (data, countryName) => data.find(({ country }) => country === countryName);
 
-export { getContinentsData, filterByContinentname, filterByCountry };
+export { getContinentsData, filterByContinentname, getCountry };

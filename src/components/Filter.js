@@ -11,7 +11,7 @@ const Filter = ({ data, filter, category }) => {
 
   if ((category === 'Continent') && filteredData.length) {
     return (
-      <CountriesList data={filteredData} />
+      <CountriesList fdata={filteredData} />
     );
   }
 

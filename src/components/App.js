@@ -7,6 +7,22 @@ import ADD_DATA from '../actions';
 import ContinentsList from '../containers/ContinentsList';
 import CountriesList from '../containers/CountriesList';
 import Filter from './Filter';
+import '../styles/App.css';
+
+// function User({ match: { params } }) {
+//   const { continent } = params;
+//   return (
+//     <h1>
+//       Hello
+//       {continent}
+//       !
+//     </h1>
+//   );
+// }
+
+// User.propTypes = {
+//   match: PropTypes.object.isRequired,
+// };
 
 class App extends Component {
   constructor(props) {
@@ -34,43 +50,40 @@ class App extends Component {
   }
 
   handleCategory({ value }) {
-    // console.log(value);
     this.setState({ category: value });
   }
 
   render() {
     const { filter, category } = this.state;
-    const { data } = this.props;
+    // const { data } = this.props;
     return (
       <>
         <nav>
-          <input type="text" onChange={e => this.handleFilter(e.target)} value={filter} />
-          <select onChange={e => this.handleCategory(e.target)}>
+          <input id="filter-field" type="text" onChange={e => this.handleFilter(e.target)} value={filter} placeholder="Country/Continent" />
+          <select id="filter-category" onChange={e => this.handleCategory(e.target)}>
             <option disabled selected>Select</option>
-            <option>Continent</option>
             <option>Country</option>
+            <option>Continent</option>
           </select>
-          <Link to="/filter" className="filter-btn">Filter</Link>
+          <Link to="/filter" id="filter-btn">Filter</Link>
         </nav>
 
-        <div>
+        <main>
           <Switch>
             <Route exact path="/" component={ContinentsList} />
-            <Route path="/countries">
-              <CountriesList data={data} />
-            </Route>
+            <Route path="/countries/:continent" component={CountriesList} />
             <Route path="/filter">
               <Filter filter={filter} category={category} />
             </Route>
           </Switch>
-        </div>
+        </main>
       </>
     );
   }
 }
 
 App.propTypes = {
-  data: PropTypes.array.isRequired,
+  // data: PropTypes.array.isRequired,
   ADD_DATA: PropTypes.func.isRequired,
 };
 

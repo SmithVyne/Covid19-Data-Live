@@ -4,11 +4,11 @@ import Continent from '../components/Continent';
 import { getContinentsData } from '../utilities/sorting';
 
 const ContinentsList = ({ data }) => (
-  <>
+  <div id="continentsList">
     {
-      data.map(continent => <Continent key={continent.continent} continent={continent} />)
+      data.map((continent, index) => <Continent background={(index % 2) ? '#d31860' : '#ec4c8a'} key={continent.continent} continent={continent} />)
     }
-  </>
+  </div>
 );
 
 ContinentsList.propTypes = {

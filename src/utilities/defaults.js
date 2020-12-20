@@ -1,3 +1,3 @@
 export default {
-  'base-url': 'https://covid-api.mmediagroup.fr/v1/cases',
+  'base-url': 'https://cors-anywhere.herokuapp.com/https://covid-api.mmediagroup.fr/v1/cases',
 };

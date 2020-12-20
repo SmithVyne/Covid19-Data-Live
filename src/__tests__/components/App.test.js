@@ -7,6 +7,7 @@ import Reducer from '../../reducer';
 
 describe('Tests the app functions', () => {
   const store = createStore(Reducer);
+
   const { getByRole, getByText } = render(
     <Provider store={store}>
       <BrowserRouter>
@@ -14,10 +15,10 @@ describe('Tests the app functions', () => {
       </BrowserRouter>
     </Provider>,
   );
-
+  
   it('First displays the home page with a nav bar', async () => {
     await waitFor(() => {
       expect(getByRole('navigation')).toBeInTheDocument();
-    })
+    });
   });
 });

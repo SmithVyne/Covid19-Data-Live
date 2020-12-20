@@ -14,7 +14,6 @@ const colorPicker = index => {
 };
 
 const CountriesList = ({ match, data, fdata }) => {
-  // console.log(match);
   if (match) {
     const { continent: name } = match.params;
     const continent = filterByContinentname(data, name);

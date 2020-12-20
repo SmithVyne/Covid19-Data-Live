@@ -9,21 +9,6 @@ import CountriesList from '../containers/CountriesList';
 import Filter from './Filter';
 import '../styles/App.css';
 
-// function User({ match: { params } }) {
-//   const { continent } = params;
-//   return (
-//     <h1>
-//       Hello
-//       {continent}
-//       !
-//     </h1>
-//   );
-// }
-
-// User.propTypes = {
-//   match: PropTypes.object.isRequired,
-// };
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -55,7 +40,6 @@ class App extends Component {
 
   render() {
     const { filter, category } = this.state;
-    // const { data } = this.props;
     return (
       <>
         <nav>
@@ -83,7 +67,6 @@ class App extends Component {
 }
 
 App.propTypes = {
-  // data: PropTypes.array.isRequired,
   ADD_DATA: PropTypes.func.isRequired,
 };
 

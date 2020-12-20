@@ -16,6 +16,7 @@ class App extends Component {
     this.state = {
       filter: '',
       category: '',
+      render: false,
     };
 
     this.handleFilter = this.handleFilter.bind(this);
@@ -27,7 +28,7 @@ class App extends Component {
 
     fetch(defaults['base-url'])
       .then(response => response.json())
-      .then(data => ADD_DATA(data));
+      .then(data => ADD_DATA(data) && this.setState({ render: true }));
   }
 
   handleFilter({ value }) {
@@ -39,29 +40,43 @@ class App extends Component {
   }
 
   render() {
-    const { filter, category } = this.state;
-    return (
-      <>
-        <nav>
-          <input id="filter-field" type="text" onChange={e => this.handleFilter(e.target)} value={filter} placeholder="Country/Continent" />
-          <select id="filter-category" onChange={e => this.handleCategory(e.target)}>
-            <option disabled selected>Select</option>
-            <option>Country</option>
-            <option>Continent</option>
-          </select>
-          <Link to="/filter" id="filter-btn">Filter</Link>
-        </nav>
+    const { filter, category, render } = this.state;
+    if (render) {
+      return (
+        <>
+          <nav>
+            <input id="filter-field" type="text" onChange={e => this.handleFilter(e.target)} value={filter} placeholder="Country/Continent" />
+            <select id="filter-category" onChange={e => this.handleCategory(e.target)}>
+              <option disabled selected>Select</option>
+              <option>Country</option>
+              <option>Continent</option>
+            </select>
+            <Link to="/filter" id="filter-btn">Filter</Link>
+          </nav>
 
-        <main>
-          <Switch>
-            <Route exact path="/" component={ContinentsList} />
-            <Route path="/countries/:continent" component={CountriesList} />
-            <Route path="/filter">
-              <Filter filter={filter} category={category} />
-            </Route>
-          </Switch>
-        </main>
-      </>
+          <main>
+            <Switch>
+              <Route exact path="/" component={ContinentsList} />
+              <Route path="/countries/:continent" component={CountriesList} />
+              <Route path="/filter">
+                <Filter filter={filter} category={category} />
+              </Route>
+            </Switch>
+          </main>
+        </>
+      );
+    }
+    return (
+      <div className="lds-roller">
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
     );
   }
 }

@@ -1,6 +1,6 @@
-import { filterByContinentname, getContinentsData, getCountry } from '../../utilities/sorting';
-import { getAllCountries } from '../../utilities';
-import data from '../../json/data';
+import { filterByContinentname, getContinentsData, getCountry } from '../utilities/sorting';
+import { getAllCountries } from '../utilities';
+import data from '../json/data';
 
 describe('Tests all the sorting methods', () => {
   const afga = {

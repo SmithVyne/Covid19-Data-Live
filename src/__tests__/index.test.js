@@ -1,6 +1,6 @@
-import { getAllCountries, sumCountryData } from '../../utilities';
-import { filterByContinentname } from '../../utilities/sorting';
-import data from '../../json/data';
+import { getAllCountries, sumCountryData } from '../utilities';
+import { filterByContinentname } from '../utilities/sorting';
+import data from '../json/data';
 
 describe('It tests the main utility functions', () => {
   const afga = {

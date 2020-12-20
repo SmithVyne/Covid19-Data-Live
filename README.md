@@ -24,7 +24,7 @@ Follow the steps below to test the project locally. First ensure you have a vers
 or any other port randomly available to React.
 
 ## Testing
-
+1. In the root directory of the project run `npm test` command to run all tests
 
 👤 **Smith Nkereuwem**
 

@@ -35,7 +35,6 @@ describe('Tests all the sorting methods', () => {
     it('It finds and returns a single country object', () => {
       const country = getCountry(getAllCountries(data), 'Ghana');
       expect(country).toBeInstanceOf(Object);
-      console.log(country);
       expect(country.continent).toEqual('Africa');
     });
   });

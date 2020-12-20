@@ -1,5 +1,6 @@
 # Catalogue of Statistics Project
-  I built this Covid19 Live Data application as my capstone project to complete the React/Redux curriculum at [Microverse](https://microverse.org) 
+  I built this Covid19 Live Data application as my capstone project to complete the React/Redux curriculum at [Microverse](https://microverse.org).
+  The application fetches data from the [M-Media Covid-19 data API](https://github.com/M-Media-Group/Covid-19-API).
 
 ## Live version
 [Book Store](https://vynebooks.herokuapp.com/)

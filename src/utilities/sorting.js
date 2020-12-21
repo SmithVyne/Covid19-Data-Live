@@ -1,7 +1,9 @@
 import { sumCountryData } from './index';
 
 const filterByContinentname = (data, continent) => {
-  const continentData = data.filter(country => country.continent === continent);
+  const continentData = data.filter(country => (
+    country.continent.toLowerCase() === continent.toLowerCase()
+  ));
   return continentData;
 };
 
@@ -21,6 +23,8 @@ const getContinentsData = data => {
   return sumOfContinents;
 };
 
-const getCountry = (data, countryName) => data.find(({ country }) => country === countryName);
+const getCountry = (data, countryName) => data.find(({ country }) => (
+  country.toLowerCase() === countryName.toLowerCase()
+));
 
 export { getContinentsData, filterByContinentname, getCountry };

@@ -6,7 +6,6 @@ const Continent = ({ background, continent }) => {
   const {
     continent: name, confirmed, recovered, deaths,
   } = continent;
-
   return (
     <Link to={`/countries/${name}`} style={{ background }} className="continent">
       <span>{name}</span>
@@ -21,7 +20,12 @@ const Continent = ({ background, continent }) => {
 
 Continent.propTypes = {
   background: PropTypes.string.isRequired,
-  continent: PropTypes.object.isRequired,
+  continent: PropTypes.shape({
+    confirmed: PropTypes.number,
+    continent: PropTypes.string,
+    deaths: PropTypes.number,
+    recovered: PropTypes.number,
+  }).isRequired,
 };
 
 export default Continent;

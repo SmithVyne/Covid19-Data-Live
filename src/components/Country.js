@@ -29,7 +29,13 @@ const Country = ({ background, country }) => {
 
 Country.propTypes = {
   background: PropTypes.string.isRequired,
-  country: PropTypes.object.isRequired,
+  country: PropTypes.shape({
+    country: PropTypes.string,
+    confirmed: PropTypes.number,
+    continent: PropTypes.string,
+    deaths: PropTypes.number,
+    recovered: PropTypes.number,
+  }).isRequired,
 };
 
 export default Country;

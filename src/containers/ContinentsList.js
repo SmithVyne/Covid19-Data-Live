@@ -12,7 +12,7 @@ const ContinentsList = ({ data }) => (
 );
 
 ContinentsList.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = state => {

@@ -3,7 +3,7 @@
   The application fetches data from the [M-Media Covid-19 data API](https://github.com/M-Media-Group/Covid-19-API).
 
 ## Live version
-[Book Store](https://vynebooks.herokuapp.com/)
+[Catalogue of Statistics](https://covid19-news.herokuapp.com/)
 
 ## Technologies
   - React
@@ -17,8 +17,8 @@
 ## Installation
 Follow the steps below to test the project locally. First ensure you have a version of [Node.js](http://nodejs.org/) equal or greater than v6.10.0 installed.
 
-1. Clone the repository from a terminal `https://github.com/SmithVyne/react-bookstore.git`.
-2. Navigate to the project directory `cd react-bookstore`.
+1. Clone the repository from a terminal `https://github.com/SmithVyne/Covid19-Data-Live.git`.
+2. Navigate to the project directory `cd covid19-data-live`.
 3. Install project dependencies `npm install`.
 4. Run `npm start` to compile  and serve a development build live on `http://localhost:3000` 
 or any other port randomly available to React.

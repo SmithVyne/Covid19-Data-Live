@@ -54,9 +54,9 @@ CountriesList.defaultProps = {
 };
 
 CountriesList.propTypes = {
-  match: PropTypes.object,
-  data: PropTypes.array.isRequired,
-  fdata: PropTypes.array,
+  match: PropTypes.objectOf(PropTypes.object),
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  fdata: PropTypes.arrayOf(PropTypes.object),
 };
 
 const mapStateToProps = ({ data }) => ({ data });

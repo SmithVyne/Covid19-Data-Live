@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { Route, Switch, Link } from 'react-router-dom';
 import defaults from '../utilities/defaults';
 import ADD_DATA from '../actions';
-import ContinentsList from '../containers/ContinentsList';
-import CountriesList from '../containers/CountriesList';
-import Filter from './Filter';
+import ContinentsList from './ContinentsList';
+import CountriesList from './CountriesList';
+import Filter from '../components/Filter';
 import '../styles/App.css';
 
 class App extends Component {
@@ -85,9 +85,7 @@ App.propTypes = {
   ADD_DATA: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ data }) => ({ data });
-
 export default connect(
-  mapStateToProps,
+  null,
   { ADD_DATA },
 )(App);

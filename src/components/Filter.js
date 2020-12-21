@@ -25,7 +25,7 @@ const Filter = ({ data, filter, category }) => {
 };
 
 Filter.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
   filter: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
 };

@@ -46,7 +46,8 @@ class App extends Component {
         <>
           <nav>
             <input id="filter-field" type="text" onChange={e => this.handleFilter(e.target)} value={filter} placeholder="Country/Continent" />
-            <select value="Country" id="filter-category" onChange={e => this.handleCategory(e.target)}>
+            <select defaultValue="Select" id="filter-category" onChange={e => this.handleCategory(e.target)}>
+              <option disabled>Select</option>
               <option>Country</option>
               <option>Continent</option>
             </select>
